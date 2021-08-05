@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/feature",
         glue = "com/zeroBank/stepdefinitions",
-        dryRun =false,
+        dryRun =true,
         tags = "@wip"
 
 )

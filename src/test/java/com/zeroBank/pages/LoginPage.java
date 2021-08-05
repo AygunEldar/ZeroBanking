@@ -27,11 +27,20 @@ public class LoginPage {
     @FindBy(xpath ="//a[@id='proceed-link']")
     public WebElement proceedLink;
 
+    @FindBy(xpath = "//div[@class='alert alert-error']")
+    public WebElement errorMessage;
+
     public void resolveUnsecureConnections(){
        wait.until(ExpectedConditions.visibilityOf(advanced));
        advanced.click();
 
        wait.until(ExpectedConditions.visibilityOf(proceedLink));
        proceedLink.click();
+    }
+
+    public void login(String user, String pass) {
+        username.sendKeys(user);
+        password.sendKeys(pass);
+        signIn.click();
     }
 }
